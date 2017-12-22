@@ -1,0 +1,82 @@
+package chart;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.block.BlockBorder;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.ui.RectangleEdge;
+
+import util.ChartUtils;
+
+/**
+ * 
+ * @author ccw
+ * @date 2014-6-11
+ *       <p>
+ *       ????????裺<br/>
+ *       1?????????????<br/>
+ *       2??????Chart??<br/>
+ *       3:????????????????????????<br/>
+ *       4:??????????????<br/>
+ *       5:????????????????<br/>
+ *       6:???chartPanel????<br/>
+ * 
+ *       </p>
+ */
+public class PieChart {
+	public PieChart() {
+	}
+
+	public DefaultPieDataset createDataset() {
+		String[] categories = { "Bananas", "Kiwi", "Mixed nuts", "Oranges", "Apples", "Pears", "Clementines", "Reddish (bag)", "Grapes (bunch)", };
+		Object[] datas = { 8, 3, 1, 6, 8, 4, 4, 1, 1 };
+		DefaultPieDataset dataset = ChartUtils.createDefaultPieDataset(categories, datas);
+		return dataset;
+	}
+
+	public ChartPanel createChart() {
+		// 2??????Chart[??????????]
+		JFreeChart chart = ChartFactory.createPieChart("Contents of Highsoft's weekly fruit delivery", createDataset());
+		// 3:????????????????????????
+		ChartUtils.setAntiAlias(chart);// ?????
+		// 4:????????????[??????????]
+		ChartUtils.setPieRender(chart.getPlot());
+		/**
+		 * ??????????
+		 */
+		// plot.setSimpleLabels(true);//????,??????????
+		// plot.setLabelGenerator(null);//?????????
+		// ??????????
+		chart.getLegend().setFrame(new BlockBorder(Color.WHITE));
+		// ???λ?????
+		chart.getLegend().setPosition(RectangleEdge.RIGHT);
+		// 6:???chartPanel????
+		ChartPanel chartPanel = new ChartPanel(chart);
+		return chartPanel;
+	}
+
+	public static void main(String[] args) {
+		final JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(1024, 420);
+		frame.setLocationRelativeTo(null);
+
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				// ???????
+				ChartPanel chartPanel = new PieChart().createChart();
+				frame.getContentPane().add(chartPanel);
+				frame.setVisible(true);
+			}
+		});
+
+	}
+
+}

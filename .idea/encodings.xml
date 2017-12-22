@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/chart/AnnotationDemo2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/BarChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/DualaxisChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/LineChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/MultiAxises.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/PieChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/StackedBarChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chart/TimeSeriesChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/ChartUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/Serie.java" charset="GBK" />
+  </component>
+</project>
